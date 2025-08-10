@@ -155,7 +155,25 @@ n_dict = {
     # anatase TiO2 from Wang et al. Think Solid Films. 405, 2002, 50-54
     # measured from 500-1700 nm
     'anatase': lambda w: 2.1526 + Quantity('4.1155e-2 um^2')/(w*w)+
-                                  Quantity('2.1798e-3 um^4')/(w*w*w*w)
+                                  Quantity('2.1798e-3 um^4')/(w*w*w*w),
+    
+    # added by Ming on July 8, 2020                             
+    'polylactide': lambda w: 1.445 + Quantity('4.892e-3 um^2')/(w**2),     
+
+    # wavlength need to be in nm to make the imaginary index work
+    'natural_melanin':  lambda w: 1.590 + Quantity('1.48e-2 um^2')/(w**2) + 
+                             (0.56 * np.e ** (- w.magnitude / 270)) * 1j,   
+
+    'keratin': lambda w: 1.532 + Quantity('5.89e-3 um^2')/(w**2),
+
+    'silk_B_Mori': lambda w: 1.551 + Quantity('2.6e-3 um^2')/(w**2) + 
+                                     Quantity('2.4e-4 um^4')/(w**4), 
+                                     
+    'skin_epidermic': lambda w: 1.4134 + Quantity('7.908e-3 um^2')/(w**2) + 
+                                         Quantity('-4.0e-9 um^4')/(w**4),
+
+    'skin_dermis': lambda w: 1.3696 + Quantity('3.9169e-3 um^2')/(w**2) + 
+                                        Quantity('2.5588e-9 um^4')(w**4),    
 }
 
 # ensures wavelen has units of length
