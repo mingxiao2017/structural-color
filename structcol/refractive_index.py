@@ -157,7 +157,7 @@ n_dict = {
     'anatase': lambda w: 2.1526 + Quantity('4.1155e-2 um^2')/(w*w)+
                                   Quantity('2.1798e-3 um^4')/(w*w*w*w),
     
-    # added by Ming on July 8, 2020                             
+    # some biological polymers, added on Aug,11, 2025                             
     'polylactide': lambda w: 1.445 + Quantity('4.892e-3 um^2')/(w**2),     
 
     # wavlength need to be in nm to make the imaginary index work
