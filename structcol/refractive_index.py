@@ -156,6 +156,12 @@ n_dict = {
     # measured from 500-1700 nm
     'anatase': lambda w: 2.1526 + Quantity('4.1155e-2 um^2')/(w*w)+
                                   Quantity('2.1798e-3 um^4')/(w*w*w*w),
+                                  
+    # zinc sulfide from M. Debenham. Appl. Opt., 23, 2238-2239 (1984)
+    # C. A. Klein. Appl. Opt. 25, 1873-1875 (1986)                              
+    'zinc sulfide': lambda w: (8.393 + 0.14383/(w*w - 0.2421**2) + 
+                               4430.99/(w*w - 36.71**2))**0.5, 
+    
     
     # some biological polymers, added on Aug,11, 2025                             
     'polylactide': lambda w: 1.445 + Quantity('4.892e-3 um^2')/(w**2),     
